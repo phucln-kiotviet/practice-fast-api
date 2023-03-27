@@ -39,3 +39,13 @@ pip install "uvicorn[standard]"
 ```
 
 
+## Run server
+- Run server
+
+```shell
+uvicorn main:app --reload
+```
+
+- Check doc at: `localhost:8000/docs` 
+
+- Check other doc at: `localhost:8000/redoc`
