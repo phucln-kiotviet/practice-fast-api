@@ -30,7 +30,7 @@ pip3 install -r requirements.txt
 - Install fastapi package:
 
 ```
-pip install fastapi
+pip install "fastapi[all]"
 ```
 
 - If you need a ASGI server, for production use [Uvicorn](https://www.uvicorn.org/) or [Hypercorn](https://github.com/pgjones/hypercorn)
