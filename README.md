@@ -65,3 +65,12 @@ uvicorn main:app --reload
   - Nếu param là `single type` ( như `int`, `float`, `str`, `bool`) nó sẽ được hiểu `query` parameters.
   - Nếu param được khai báo kiểu `pydantic model` sẽ được dịch là request body.
 
+## SQLAlchemy model vs Pydantic model
+
+- To avoid confusion between the SQLAlchemy models and the Pydantic models, we will have the file `models.py` with the SQLAlchemy models and the file `schemas.py` with the Pydantic models.
+
+- SQLAlchemy style and Pydantic style: SQLAlchemy using `=` and pass type as param to `Column` like: `name = Column(String)` while Pydantic models declare the types using `:`, the new type annotation syntax/type hints: `name: str`. Have it in mind!!!
+
+
+
+
