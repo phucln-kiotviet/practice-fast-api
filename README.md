@@ -2,6 +2,14 @@
 
 - From official [doc](https://fastapi.tiangolo.com/)
 
+
+## Muc luc
+- Finished: 
+  - [Project generation](https://fastapi.tiangolo.com/project-generation/)
+
+- Also in progress: [SQL Database](https://fastapi.tiangolo.com/tutorial/sql-databases/)
+- Stop [at](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/) --> Continue after it
+
 ## Env
 
 - Create virtual env:
