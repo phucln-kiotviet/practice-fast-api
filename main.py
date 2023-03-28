@@ -1,13 +1,14 @@
 import uvicorn
-from enum import Enum
+from pydantic import BaseModel
 
 from fastapi import FastAPI
 
+class Item(BaseModel):
+  name: str
+  description: str | None = None
+  price: float
+  tax: float | None = None
 
-class ModelName(str, Enum):
-    alexnet = "alexnet"
-    resnet = "resnet"
-    lenet = "lenet"
 
 
 app = FastAPI()
@@ -17,8 +18,6 @@ if __name__ == '__main__':
 
 
 
-@app.get("/items/{item_id}")
-async def read_item(item_id: str, q: str | None = None, short: bool = False):
-  if q:
-    return {"item_id": item_id, "q": q}
-  return {"item_id": item_id}
+@app.post("/items")
+async def create_item(item: Item):
+  return item
