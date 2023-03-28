@@ -7,7 +7,7 @@
 - Finished: 
   - [Project generation](https://fastapi.tiangolo.com/project-generation/)
 
-- Also in progress: [SQL Database](https://fastapi.tiangolo.com/tutorial/sql-databases/)
+- Also in progress: [SQL Database](https://fastapi.tiangolo.com/tutorial/sql-databases/): Stop at this: https://fastapi.tiangolo.com/tutorial/sql-databases/#create-data
 - Stop [at](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/) --> Continue after it
 
 ## Env
@@ -71,6 +71,5 @@ uvicorn main:app --reload
 
 - SQLAlchemy style and Pydantic style: SQLAlchemy using `=` and pass type as param to `Column` like: `name = Column(String)` while Pydantic models declare the types using `:`, the new type annotation syntax/type hints: `name: str`. Have it in mind!!!
 
-
-
+- Pydantic's `orm_mode` tell Pydantic model to read the data even if it is not a `dict`, but an ORM model ( or any other arbitrary object with attributes).
 
