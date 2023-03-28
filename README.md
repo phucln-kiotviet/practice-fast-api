@@ -49,3 +49,11 @@ uvicorn main:app --reload
 - Check doc at: `localhost:8000/docs` 
 
 - Check other doc at: `localhost:8000/redoc`
+
+## Request body
+
+- Function parameters will be recognized as follows:
+  - Nếu param được khai báo trong `path` nó sẽ là `path parameters`.
+  - Nếu param là `single type` ( như `int`, `float`, `str`, `bool`) nó sẽ được hiểu `query` parameters.
+  - Nếu param được khai báo kiểu `pydantic model` sẽ được dịch là request body.
+
