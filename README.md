@@ -54,6 +54,12 @@ pip install "uvicorn[standard]"
 uvicorn main:app --reload
 ```
 
+- Or if you want check `sql_app` use this command:
+
+```
+uvicorn sql_app.main:app --reload
+```
+
 - Check doc at: `localhost:8000/docs` 
 
 - Check other doc at: `localhost:8000/redoc`
