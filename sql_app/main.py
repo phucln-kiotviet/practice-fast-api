@@ -1,4 +1,4 @@
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from sqlalchemy.orm import Session
 
 from . import crud, models, schemas
@@ -9,13 +9,20 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# Dependency
-def get_db():
-    db = SessioinLocal()
+
+@app.middleware("http")
+async def db_session_middleware(request: Request, call_next):
+    response = Response("internal server error",  status_code=500)
     try:
-        yield db
+        request.state.db = SessioinLocal()
+        response = await call_next(request)
     finally:
-        db.close()
+        request.state.db.close()
+    return response
+
+# Dependency
+def get_db(request: Request):
+    return request.state.db
 
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db:Session = Depends(get_db)):

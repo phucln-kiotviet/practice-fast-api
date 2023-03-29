@@ -6,8 +6,8 @@
 ## Muc luc
 - Finished: 
   - [Project generation](https://fastapi.tiangolo.com/project-generation/)
+  - [SQL Database](https://fastapi.tiangolo.com/tutorial/sql-databases)
 
-- Also in progress: [SQL Database](https://fastapi.tiangolo.com/tutorial/sql-databases/): Stop at this: https://fastapi.tiangolo.com/tutorial/sql-databases/#create-data
 - Stop [at](https://fastapi.tiangolo.com/tutorial/query-params-str-validations/) --> Continue after it
 
 ## Env
